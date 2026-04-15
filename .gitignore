@@ -1,0 +1,6 @@
+*.pid
+*.out.log
+*.err.log
+
+backend/.env
+frontend/.env
