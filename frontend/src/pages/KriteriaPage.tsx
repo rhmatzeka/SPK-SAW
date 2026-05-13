@@ -87,7 +87,7 @@ export function KriteriaPage() {
 
   return (
     <div className="space-y-6">
-      <Card className="rounded-[2rem]">
+      <Card className="rounded-xl">
         <CardHeader className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <div>
             <CardTitle>Manajemen Kriteria</CardTitle>
@@ -144,7 +144,7 @@ export function KriteriaPage() {
         </CardHeader>
         <CardContent>
           {summary ? (
-            <div className="mb-4 flex flex-wrap items-center gap-3 rounded-3xl border bg-muted/50 p-4">
+            <div className="mb-4 flex flex-wrap items-center gap-3 rounded-xl border bg-muted/50 p-4">
               <Badge variant={summary.is_valid ? 'success' : 'warning'}>
                 Total Bobot {formatNumber(summary.total_bobot)} / {formatNumber(summary.target)}
               </Badge>
@@ -153,11 +153,11 @@ export function KriteriaPage() {
           ) : null}
 
           {loading ? (
-            <div className="rounded-3xl border p-6 text-sm text-muted-foreground">Memuat data...</div>
+            <div className="rounded-xl border p-6 text-sm text-muted-foreground">Memuat data...</div>
           ) : error ? (
-            <div className="rounded-3xl border border-destructive/20 bg-destructive/10 p-6 text-destructive">{error}</div>
+            <div className="rounded-xl border border-destructive/20 bg-destructive/10 p-6 text-destructive">{error}</div>
           ) : (
-            <div className="overflow-x-auto rounded-3xl border">
+            <div className="overflow-x-auto rounded-xl border">
               <table className="min-w-full text-sm">
                 <thead className="bg-muted/60 text-left">
                   <tr>

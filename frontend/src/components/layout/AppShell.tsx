@@ -46,21 +46,19 @@ export function AppShell() {
 
   return (
     <div className="page-gradient min-h-screen">
-      <div className="mx-auto flex min-h-screen max-w-7xl gap-4 px-4 py-4 lg:px-6">
+      <div className="mx-auto flex min-h-screen max-w-[1500px]">
         <aside
           className={cn(
-            'glass-panel fixed inset-y-4 left-4 z-40 w-72 rounded-3xl border p-5 transition-transform lg:static lg:translate-x-0',
+            'fixed inset-y-0 left-0 z-40 flex w-72 flex-col border-r bg-background p-6 transition-transform lg:sticky lg:top-0 lg:translate-x-0',
             open ? 'translate-x-0' : '-translate-x-[120%]',
           )}
         >
           <div className="mb-8">
-            <div className="mb-3 inline-flex rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
+            <div className="mb-3 inline-flex rounded-md bg-secondary px-3 py-1 text-xs font-semibold text-secondary-foreground">
               Sistem Penunjang Keputusan
             </div>
-            <h1 className="text-2xl font-bold">SPK SAW Studio</h1>
-            <p className="mt-2 text-sm text-muted-foreground">
-              Kelola kriteria, alternatif, matriks keputusan, dan laporan hasil ranking secara real-time.
-            </p>
+            <h1 className="text-2xl font-semibold">SPK SAW</h1>
+            <p className="mt-2 text-sm leading-6 text-muted-foreground">Dashboard sederhana untuk pengambilan keputusan.</p>
           </div>
 
           <nav className="space-y-2">
@@ -71,8 +69,10 @@ export function AppShell() {
                 onClick={() => setOpen(false)}
                 className={({ isActive }) =>
                   cn(
-                    'flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-medium transition',
-                    isActive ? 'bg-primary text-primary-foreground shadow-lg shadow-primary/20' : 'hover:bg-muted',
+                    'flex items-center gap-3 rounded-lg border-l-2 px-4 py-3 text-sm font-medium transition',
+                    isActive
+                      ? 'border-primary bg-primary/10 text-foreground'
+                      : 'border-transparent text-muted-foreground hover:bg-muted hover:text-foreground',
                   )
                 }
               >
@@ -87,8 +87,10 @@ export function AppShell() {
                 onClick={() => setOpen(false)}
                 className={({ isActive }) =>
                   cn(
-                    'flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-medium transition',
-                    isActive ? 'bg-primary text-primary-foreground shadow-lg shadow-primary/20' : 'hover:bg-muted',
+                    'flex items-center gap-3 rounded-lg border-l-2 px-4 py-3 text-sm font-medium transition',
+                    isActive
+                      ? 'border-primary bg-primary/10 text-foreground'
+                      : 'border-transparent text-muted-foreground hover:bg-muted hover:text-foreground',
                   )
                 }
               >
@@ -98,25 +100,25 @@ export function AppShell() {
             )}
           </nav>
 
-          <div className="mt-8 rounded-2xl bg-secondary p-4 text-sm">
+          <div className="mt-auto border-t pt-6 text-sm">
             <p className="font-semibold">{user?.name}</p>
             <p className="text-muted-foreground">{user?.email}</p>
-            <p className="mt-2 inline-flex rounded-full bg-background px-2 py-1 text-xs uppercase tracking-wide">
+            <p className="mt-3 inline-flex rounded-md bg-secondary px-2 py-1 text-xs uppercase">
               {user?.role}
             </p>
           </div>
         </aside>
 
-        <div className="flex min-h-screen flex-1 flex-col">
-          <header className="glass-panel sticky top-4 z-30 mb-4 rounded-3xl border px-4 py-4">
+        <div className="flex min-h-screen flex-1 flex-col px-5 py-6 lg:px-8">
+          <header className="mb-8 border-b pb-6">
             <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
               <div className="flex items-center gap-3">
                 <Button variant="outline" className="lg:hidden" onClick={() => setOpen((value) => !value)}>
                   <Menu className="h-4 w-4" />
                 </Button>
                 <div>
-                  <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">workspace</p>
-                  <h2 className="text-2xl font-bold">{title}</h2>
+                  <p className="text-xs uppercase text-muted-foreground">Workspace</p>
+                  <h2 className="text-2xl font-semibold">{title}</h2>
                 </div>
               </div>
 
@@ -138,7 +140,7 @@ export function AppShell() {
           </main>
 
           <footer className="px-2 py-6 text-sm text-muted-foreground">
-            <div className="glass-panel flex flex-col justify-between gap-2 rounded-3xl border px-5 py-4 md:flex-row md:items-center">
+            <div className="flex flex-col justify-between gap-2 border-t pt-5 md:flex-row md:items-center">
               <span>SPK Metode SAW dengan React, Zustand, Laravel Sanctum, dan Recharts.</span>
               <span className="inline-flex items-center gap-2">
                 <BarChart3 className="h-4 w-4" />

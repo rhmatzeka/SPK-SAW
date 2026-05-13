@@ -6,7 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 export function NotFoundPage() {
   return (
     <div className="flex min-h-screen items-center justify-center px-4">
-      <Card className="w-full max-w-xl rounded-[2rem]">
+      <Card className="w-full max-w-xl rounded-xl">
         <CardHeader>
           <CardTitle className="text-4xl">404</CardTitle>
         </CardHeader>

@@ -1,4 +1,4 @@
-import { ArrowRight, LockKeyhole, Sparkles } from 'lucide-react'
+import { ArrowRight, BarChart3, LockKeyhole } from 'lucide-react'
 import { useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { toast } from 'sonner'
@@ -40,35 +40,35 @@ export function LoginPage() {
   return (
     <div className="page-gradient flex min-h-screen items-center justify-center px-4 py-8">
       <div className="grid w-full max-w-6xl gap-6 lg:grid-cols-[1.1fr_0.9fr]">
-        <section className="glass-panel hidden rounded-[2rem] border p-8 lg:flex lg:flex-col lg:justify-between">
+        <section className="glass-panel hidden rounded-xl border p-8 shadow-sm lg:flex lg:flex-col lg:justify-between">
           <div>
-            <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold text-primary">
-              <Sparkles className="h-4 w-4" />
-              Modern Decision Engine
+            <div className="mb-4 inline-flex items-center gap-2 rounded-md bg-secondary px-4 py-2 text-sm font-semibold text-secondary-foreground">
+              <BarChart3 className="h-4 w-4" />
+              SPK Metode SAW
             </div>
-            <h1 className="max-w-lg text-5xl font-bold leading-tight">
-              Sistem Penunjang Keputusan berbasis SAW yang rapi, cepat, dan siap production.
+            <h1 className="max-w-lg text-5xl font-semibold leading-tight">
+              Sistem Penunjang Keputusan yang rapi dan mudah dibaca.
             </h1>
-            <p className="mt-5 max-w-xl text-lg text-muted-foreground">
+            <p className="mt-5 max-w-xl text-lg leading-8 text-muted-foreground">
               Kelola bobot kriteria, matriks alternatif, normalisasi, ranking, dan laporan PDF/Excel dalam satu dashboard.
             </p>
           </div>
 
           <div className="grid gap-4 md:grid-cols-3">
             {['Role-based access', 'History perhitungan', 'Chart & export laporan'].map((label) => (
-              <div key={label} className="rounded-2xl border bg-background/70 p-4 text-sm font-medium">
+              <div key={label} className="rounded-lg border bg-background p-4 text-sm font-medium">
                 {label}
               </div>
             ))}
           </div>
         </section>
 
-        <Card className="glass-panel rounded-[2rem] border">
+        <Card className="glass-panel rounded-xl border shadow-sm">
           <CardHeader className="space-y-3">
-            <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+            <div className="inline-flex h-12 w-12 items-center justify-center rounded-lg bg-secondary text-foreground">
               <LockKeyhole className="h-5 w-5" />
             </div>
-            <CardTitle className="text-3xl">Masuk ke aplikasi</CardTitle>
+            <CardTitle className="text-3xl font-semibold">Masuk ke aplikasi</CardTitle>
             <CardDescription>
               Gunakan akun seed default: `admin@spk.test` / `password` atau `user@spk.test` / `password`.
             </CardDescription>
@@ -95,7 +95,7 @@ export function LoginPage() {
               </div>
 
               {error ? (
-                <div className="rounded-2xl border border-destructive/20 bg-destructive/10 px-4 py-3 text-sm text-destructive">
+                <div className="rounded-lg border border-destructive/20 bg-destructive/10 px-4 py-3 text-sm text-destructive">
                   {error}
                 </div>
               ) : null}

@@ -78,7 +78,7 @@ export function UsersPage() {
   }
 
   return (
-    <Card className="rounded-[2rem]">
+    <Card className="rounded-xl">
       <CardHeader className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
         <div>
           <CardTitle>Manajemen User</CardTitle>
@@ -140,9 +140,9 @@ export function UsersPage() {
         {loading ? (
           <Skeleton className="h-56 w-full" />
         ) : error ? (
-          <div className="rounded-2xl border border-destructive/20 bg-destructive/10 p-4 text-destructive">{error}</div>
+          <div className="rounded-lg border border-destructive/20 bg-destructive/10 p-4 text-destructive">{error}</div>
         ) : (
-          <div className="overflow-x-auto rounded-3xl border">
+          <div className="overflow-x-auto rounded-xl border">
             <table className="min-w-full text-sm">
               <thead className="bg-muted/60 text-left">
                 <tr>

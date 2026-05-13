@@ -70,7 +70,7 @@ export function AlternatifPage() {
   }
 
   return (
-    <Card className="rounded-[2rem]">
+    <Card className="rounded-xl">
       <CardHeader className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
         <div>
           <CardTitle>Manajemen Alternatif</CardTitle>
@@ -115,13 +115,13 @@ export function AlternatifPage() {
       </CardHeader>
       <CardContent>
         {loading ? (
-          <div className="rounded-3xl border p-6 text-sm text-muted-foreground">Memuat data...</div>
+          <div className="rounded-xl border p-6 text-sm text-muted-foreground">Memuat data...</div>
         ) : error ? (
-          <div className="rounded-3xl border border-destructive/20 bg-destructive/10 p-6 text-destructive">{error}</div>
+          <div className="rounded-xl border border-destructive/20 bg-destructive/10 p-6 text-destructive">{error}</div>
         ) : (
           <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
             {items.map((item) => (
-              <div key={item.id} className="rounded-3xl border bg-card p-5">
+              <div key={item.id} className="rounded-xl border bg-card p-5">
                 <div className="mb-4 flex items-start justify-between gap-3">
                   <div>
                     <p className="font-semibold">{item.nama}</p>

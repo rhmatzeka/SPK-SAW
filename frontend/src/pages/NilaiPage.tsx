@@ -73,7 +73,7 @@ export function NilaiPage() {
   }
 
   return (
-    <Card className="rounded-[2rem]">
+    <Card className="rounded-xl">
       <CardHeader className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
         <div>
           <CardTitle>Input Nilai Matriks Keputusan</CardTitle>
@@ -93,16 +93,16 @@ export function NilaiPage() {
         {loading ? (
           <Skeleton className="h-80 w-full" />
         ) : error ? (
-          <div className="rounded-2xl border border-destructive/20 bg-destructive/10 p-4 text-destructive">{error}</div>
+          <div className="rounded-lg border border-destructive/20 bg-destructive/10 p-4 text-destructive">{error}</div>
         ) : !data ? (
-          <div className="rounded-2xl border p-4 text-muted-foreground">Data matriks belum tersedia.</div>
+          <div className="rounded-lg border p-4 text-muted-foreground">Data matriks belum tersedia.</div>
         ) : (
           <div className="space-y-4">
-            <div className="rounded-2xl border bg-muted/50 p-4 text-sm text-muted-foreground">
+            <div className="rounded-lg border bg-muted/50 p-4 text-sm text-muted-foreground">
               Rentang nilai: {data.range.min} sampai {data.range.max}
             </div>
 
-            <div className="overflow-x-auto rounded-3xl border">
+            <div className="overflow-x-auto rounded-xl border">
               <table className="min-w-full text-sm">
                 <thead className="bg-muted/60">
                   <tr>

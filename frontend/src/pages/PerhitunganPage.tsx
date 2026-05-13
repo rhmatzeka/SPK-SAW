@@ -28,7 +28,7 @@ function MatrixTable({
   }
 
   return (
-    <Card className="rounded-[2rem]">
+    <Card className="rounded-xl">
       <CardHeader>
         <CardTitle>{title}</CardTitle>
       </CardHeader>
@@ -121,7 +121,7 @@ export function PerhitunganPage() {
 
   return (
     <div className="space-y-6">
-      <Card className="rounded-[2rem]">
+      <Card className="rounded-xl">
         <CardHeader className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <div>
             <CardTitle>Proses Perhitungan SAW</CardTitle>
@@ -144,22 +144,22 @@ export function PerhitunganPage() {
       {loading ? (
         <Skeleton className="h-96 w-full" />
       ) : error ? (
-        <div className="rounded-3xl border border-destructive/20 bg-destructive/10 p-6 text-destructive">{error}</div>
+        <div className="rounded-xl border border-destructive/20 bg-destructive/10 p-6 text-destructive">{error}</div>
       ) : (
         <div className="grid gap-6 xl:grid-cols-[0.9fr_1.1fr]">
-          <Card className="rounded-[2rem]">
+          <Card className="rounded-xl">
             <CardHeader>
               <CardTitle>Riwayat Perhitungan</CardTitle>
               <CardDescription>Pilih sesi untuk melihat detail langkah SAW.</CardDescription>
             </CardHeader>
             <CardContent className="space-y-3">
               {items.length === 0 ? (
-                <div className="rounded-2xl border p-4 text-sm text-muted-foreground">Belum ada history perhitungan.</div>
+                <div className="rounded-lg border p-4 text-sm text-muted-foreground">Belum ada history perhitungan.</div>
               ) : (
                 items.map((item) => (
                   <button
                     key={item.id}
-                    className={`w-full rounded-3xl border p-4 text-left transition ${
+                    className={`w-full rounded-xl border p-4 text-left transition ${
                       selected?.id === item.id ? 'border-primary bg-primary/5' : 'hover:bg-muted'
                     }`}
                     onClick={() => setSelected(item)}
@@ -185,7 +185,7 @@ export function PerhitunganPage() {
           <div className="space-y-6">
             {selected ? (
               <>
-                <Card className="rounded-[2rem]">
+                <Card className="rounded-xl">
                   <CardHeader className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
                     <div>
                       <CardTitle>{selected.nama_sesi}</CardTitle>
@@ -209,7 +209,7 @@ export function PerhitunganPage() {
                       {ranking.map((item) => (
                         <div
                           key={item.alternatif_id}
-                          className={`rounded-3xl border p-4 ${item.ranking === 1 ? 'bg-primary/10 border-primary/30' : ''}`}
+                          className={`rounded-xl border p-4 ${item.ranking === 1 ? 'bg-primary/10 border-primary/30' : ''}`}
                         >
                           <p className="text-sm text-muted-foreground">Ranking #{item.ranking}</p>
                           <p className="mt-2 font-semibold">{item.alternatif_nama}</p>
@@ -225,7 +225,7 @@ export function PerhitunganPage() {
                 <MatrixTable rows={selected.hasil.step_2_normalisasi} title="Step 2: Matriks Normalisasi R" isNormalized />
               </>
             ) : (
-              <Card className="rounded-[2rem]">
+              <Card className="rounded-xl">
                 <CardContent className="p-6 text-muted-foreground">Pilih history atau jalankan proses baru untuk melihat hasil.</CardContent>
               </Card>
             )}
