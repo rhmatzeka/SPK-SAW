@@ -106,3 +106,7 @@ The frontend is served as a static build here because `npm run dev` can be unrel
 | "Network Error" when logging in | Make sure the backend is running on `127.0.0.1:8000` and you opened the frontend from `127.0.0.1:5173` (CORS allows `127.0.0.1:5173` and `localhost:5173`). Restart the backend after editing `.env`. |
 | Laravel can't connect to MySQL | Check that MySQL is running, the `spk_saw` database exists, and the username and password in `.env` are right. |
 | Frontend changes don't show up | Run `npm run build` again, since the frontend is served from the build folder. |
+
+## License
+
+Released under the [MIT License](LICENSE).
